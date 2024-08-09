@@ -359,9 +359,9 @@
 
         const imageUrl = `qr/${location?.image}`;
 
-        document.getElementById('cityname').innerText = `City Code: ${location?.city}`;
-        document.getElementById('managername').innerText = `City Code: ${location?.name}`;
-        document.getElementById('qrcodeimg').innerHTML = `<img src="${imageUrl}" alt="QR Code" style="width: 150;"/>`;
+        document.getElementById('cityname').innerText = `${location?.city}`;
+        document.getElementById('managername').innerText = `${location?.name}`;
+        document.getElementById('qrcodeimg').innerHTML = `<img src="${imageUrl}" alt="QR Code" style="width: 80%;"/>`;
 
         // Show the modal
         document.getElementById('qrModal').style.display = 'block';
