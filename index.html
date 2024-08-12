@@ -3,6 +3,8 @@
     <div class="slide">
         <img src="qr/sew-logo.jpg"
             alt="Image 1">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0" class="slider-button top-button">Inquiry</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0" class="slider-button bottom-button">Inquiry</a>
     </div>
     <div class="slide">
         <img src="exhibition.png" alt="">
@@ -68,6 +70,45 @@
 
 <!-- CSS -->
 <style>
+    /* Slider Button Styles */
+    .slider-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #de0000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 5px;
+    }
+
+    .slider-button:hover {
+        background-color: #b30000;
+    }
+
+    /* Position the top button */
+    .top-button {
+        top: 140px;
+        font-size: 40px;
+        width: 25%;
+        text-align: center;
+        text-decoration:none;
+        /* Adjust the value to control the distance from the top */
+    }
+
+    /* Position the bottom button */
+    .bottom-button {
+        bottom: 140px;
+        font-size: 40px;
+        width: 25%;
+        text-align: center;
+        text-decoration:none;
+        /* Adjust the value to control the distance from the bottom */
+    }
+
     .slider {
         position: relative;
         width: 100%;
@@ -158,7 +199,7 @@
     }
 
     .modal-content {
-        background-color: rgba(255, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 1);
         margin: 5% auto;
         padding: 10px;
         width: 90%;
@@ -184,13 +225,9 @@
         text-decoration: none;
         cursor: pointer;
     }
-
     .modalText {
         color: #fff;
         font-size: -webkit-xxx-large;
-    }
-    .qrcode {
-        
     }
 </style>
 
