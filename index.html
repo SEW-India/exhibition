@@ -1,421 +1,437 @@
 <!-- HTML -->
-<div class="slider">
-    <div class="slide">
-        <img src="qr/sew-logo.jpg"
-            alt="Image 1">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0" class="slider-button top-button">Inquiry</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0" class="slider-button bottom-button">Inquiry</a>
-    </div>
-    <div class="slide">
-        <img src="exhibition.png" alt="">
-        <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
-            <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">WEST</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(17)">Mumbai<br><br>Mr.Vikram Khatarkar</div>
-            <div class="box" onclick="onClickViewQrCode(16)">Navi Mumbai<br><br>Mr.Piyush Panchal</div>
-            <div class="box" onclick="onClickViewQrCode(18)">Pune (Chakan DTC)<br><br>Mr.Gajanan Kurhe</div>
-            <div class="box" onclick="onClickViewQrCode(19)">Pune (City)<br><br>Mr.Swapnil Shinde</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(14)">Vadodara (POR DTC)<br><br>Mr.Subodh Ladwa</div>
-            <div class="box" onclick="onClickViewQrCode(15)">Vadodara (City)<br><br>Mr.Sayan Mukherjee</div>
-            <div class="box" onclick="onClickViewQrCode(12)">Ahmedabad<br><br>Mr.Viral Patel</div>
-            <div class="box" onclick="onClickViewQrCode(13)">Gandhinagar<br><br>Mr.Tejinder Singh</div>
-        </div>
-        <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
-            <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">NORTH</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(11)">Delhi<br><br>Mr.Brijmohan Bhandari</div>
-            <div class="box" onclick="onClickViewQrCode(20)">Tapukara (DTC)<br><br>Mr.Vipul Sharma</div>
-            <div class="box" onclick="onClickViewQrCode(10)">Gurugram<br><br>Mr.Vinod Kumar Meena</div>
-        </div>        
-        <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
-            <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">SOUTH</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(5)">Chennai<br><br>Mr.Jithin Balakrishnan</div>
-            <div class="box" onclick="onClickViewQrCode(6)">Sriperumbudur<br><br>Mr.Karthik Ganesh</div>
-            <div class="box" onclick="onClickViewQrCode(9)">Coimbatore<br><br>Mr.R Shanmugha Prabhu</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(3)">Bengaluru (Peenya) <br><br>Mr.Prasad Gowda</div>
-            <div class="box" onclick="onClickViewQrCode(4)">Bengaluru (Electronic City)<br><br>Mr. Sandeep Kumar</div>
-            <div class="box" onclick="onClickViewQrCode(7)">Hyderabad<br><br>Mr.Ajay Atluri</div>
-            <div class="box" onclick="onClickViewQrCode(8)">Secunderabad<br><br>Mr.A Vijay Anand</div>
-        </div>
-        <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
-            <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">EAST</div>
-        </div>
-        <div class="box-container">
-            <div class="box" onclick="onClickViewQrCode(1)">Raipur <br><br> Mr.Sutanu Sarkar</div>
-            <div class="box" onclick="onClickViewQrCode(2)">Kolkata <br><br>Mr.Sugata Nandi</div>
-        </div>
-    </div>
-    <!-- Add more slides here -->
-    <a class="prev" onclick="prevSlide()">&#10094;</a>
-    <a class="next" onclick="nextSlide()">&#10095;</a>
-</div>
+<html>
 
-<!-- Modal Structure -->
-<div id="qrModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p id="cityname" class="modalText">City Name: </p>
-        <p id="managername" class="modalText">Manager name: </p>
-        <p id="qrcodeimg" class="qrcode"></p>        
-    </div>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="qr/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="qr/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sew Eurodrive India Exhibition</title> <!-- Title added here -->
+    <!-- CSS -->
+    <style>
+        /* Slider Button Styles */
+        .slider-button {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #de0000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 5px;
+        }
 
-<!-- CSS -->
-<style>
-    /* Slider Button Styles */
-    .slider-button {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #de0000;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 5px;
-    }
+        .slider-button:hover {
+            background-color: #b30000;
+        }
 
-    .slider-button:hover {
-        background-color: #b30000;
-    }
+        /* Position the top button */
+        .top-button {
+            top: 140px;
+            font-size: 40px;
+            width: 25%;
+            text-align: center;
+            text-decoration: none;
+            /* Adjust the value to control the distance from the top */
+        }
 
-    /* Position the top button */
-    .top-button {
-        top: 140px;
-        font-size: 40px;
-        width: 25%;
-        text-align: center;
-        text-decoration:none;
-        /* Adjust the value to control the distance from the top */
-    }
+        /* Position the bottom button */
+        .bottom-button {
+            bottom: 140px;
+            font-size: 40px;
+            width: 25%;
+            text-align: center;
+            text-decoration: none;
+            /* Adjust the value to control the distance from the bottom */
+        }
 
-    /* Position the bottom button */
-    .bottom-button {
-        bottom: 140px;
-        font-size: 40px;
-        width: 25%;
-        text-align: center;
-        text-decoration:none;
-        /* Adjust the value to control the distance from the bottom */
-    }
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
 
-    .slider {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    .slide {
-        position: absolute;
-        /* top: 0;
+        .slide {
+            position: absolute;
+            /* top: 0;
         left: 0; */
-        width: 100%;
-        height: 100%;
-        display: none;
-    }
-
-    .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-
-    .prev,
-    .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        color: #de0000;
-        font-size: 36px;
-    }
-
-    .prev {
-        left: 16px;
-    }
-
-    .next {
-        right: 16px;
-    }
-
-    .active {
-        display: block;
-    }
-
-    /* Flexbox container for the boxes */
-    .box-container {
-        position: absolute;
-        bottom: 97%;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 50px;
-    }
-
-    .box-container {
-        position: relative;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    /* Style for the boxes */
-    .box {
-        width: 200px;
-        height: 135px;
-        background-color: #dfe2e3;
-        color: #de0000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    /* CSS */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .modal-content {
-        background-color: rgba(255, 0, 0, 1);
-        margin: 5% auto;
-        padding: 10px;
-        width: 90%;
-        height: 90%;
-        overflow: auto;
-        position: relative;
-        text-align: center;
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 40px;
-        font-weight: bold;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    .modalText {
-        color: #fff;
-        font-size: -webkit-xxx-large;
-    }
-</style>
-
-<!-- JavaScript -->
-<script>
-    let slideIndex = 1;
-    showSlide(slideIndex);
-
-    // Function to show the previous slide
-    function prevSlide() {
-        showSlide(slideIndex -= 1);
-    }
-
-    // Function to show the next slide
-    function nextSlide() {
-        showSlide(slideIndex += 1);
-    }
-
-    // Function to show the current slide
-    function showSlide(n) {
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {
-            slideIndex = 1;
+            width: 100%;
+            height: 100%;
+            display: none;
         }
-        if (n < 1) {
-            slideIndex = slides.length;
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #de0000;
+            font-size: 36px;
         }
-        slides[slideIndex - 1].style.display = "block";
-    }
 
-    // Automatically change slide every 3 seconds
-    // setInterval(() => {
-    //     nextSlide();
-    //  }, 3000);  // 3000 milliseconds = 3 seconds
+        .prev {
+            left: 16px;
+        }
 
+        .next {
+            right: 16px;
+        }
 
-    // JavaScript
-    function onClickViewQrCode(cityCode) {
-        let locations = [
-            {
-                id: 1,
-                city: "Raipur",
-                name: "Mr. Sutanu Sarkar",
-                image: "1.jpg"
-            },
-            {
-                id: 2,
-                city: "Kolkata",
-                name: "Mr. Sugata Nandi",
-                image: "2.jpg"
-            },
-            {
-                id: 3,
-                city: "Bengaluru (Peenya)",
-                name: "Mr. Prasad Gowda",
-                image: "3.jpg"
-            },
-            {
-                id: 4,
-                city: "Bengaluru (Electronic City)",
-                name: "Mr. Sandeep Kumar",
-                image: "4.jpg"
-            },
-            {
-                id: 5,
-                city: "Chennai",
-                name: "Mr. Jithin Balakrishnan",
-                image: "5.jpg"
-            },
-            {
-                id: 6,
-                city: "Sriperumbudur",
-                name: "Mr. Karthik Ganesh",
-                image: "6.jpg"
-            },
-            {
-                id: 7,
-                city: "Hyderabad",
-                name: "Mr. Ajay Atluri",
-                image: "7.jpg"
-            },
-            {
-                id: 8,
-                city: "Secunderabad",
-                name: "Mr. A Vijay Anand",
-                image: "8.jpg"
-            },
-            {
-                id: 9,
-                city: "Coimbatore",
-                name: "Mr. R Shanmugha Prabhu",
-                image: "9.jpg"
-            },
-            {
-                id: 10,
-                city: "Gurugram",
-                name: "Mr. Vinod Kumar Meena",
-                image: "10.png"
-            },
-            {
-                id: 11,
-                city: "Delhi",
-                name: "Mr. Brijmohan Bhandari",
-                image: "11.png"
-            },
-            {
-                id: 12,
-                city: "Ahmedabad",
-                name: "Mr. Viral Patel",
-                image: "12.png"
-            },
-            {
-                id: 13,
-                city: "Gandhinagar",
-                name: "Mr. Tejinder Singh",
-                image: "13.png"
-            },
-            {
-                id: 14,
-                city: "Vadodara (POR DTC)",
-                name: "Mr. Subodh Ladwa",
-                image: "14.png"
-            },
-            {
-                id: 15,
-                city: "Vadodara (City)",
-                name: "Mr. Sayan Mukherjee",
-                image: "15.jpg"
-            },
-            {
-                id: 16,
-                city: "Navi Mumbai",
-                name: "Mr. Piyush Panchal",
-                image: "16.png"
-            },
-            {
-                id: 17,
-                city: "Mumbai",
-                name: "Mr. Vikram Khatarkar",
-                image: "17.png"
-            },
-            {
-                id: 18,
-                city: "Pune (Chakan DTC)",
-                name: "Mr. Gajanan Kurhe",
-                image: "18.png"
-            },
-            {
-                id: 19,
-                city: "Pune (City)",
-                name: "Mr. Swapnil Shinde",
-                image: "19.png"
-            },
-            {
-                id: 20,
-                city: "Tapukara (DTC)",
-                name: "Mr. Vipul Sharma",
-                image: "20.png"
+        .active {
+            display: block;
+        }
+
+        /* Flexbox container for the boxes */
+        .box-container {
+            position: absolute;
+            bottom: 97%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 50px;
+        }
+
+        .box-container {
+            position: relative;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Style for the boxes */
+        .box {
+            width: 200px;
+            height: 135px;
+            background-color: #dfe2e3;
+            color: #de0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: rgba(255, 0, 0, 1);
+            margin: 5% auto;
+            padding: 10px;
+            width: 90%;
+            height: 90%;
+            overflow: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 40px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modalText {
+            color: #fff;
+            font-size: -webkit-xxx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slide">
+            <img src="https://sew-india.github.io/exhibition/qr/sew-logo.jpg" alt="Image 1">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0"
+                class="slider-button top-button">Inquiry</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfL-G49ykTWD3M4Xj-0hzOR_sp5ftLarvPhNxL1Bv2wRNhrhA/viewform?vc=0&c=0&w=1&flr=0"
+                class="slider-button bottom-button">Inquiry</a>
+        </div>
+        <div class="slide">
+            <img src="https://sew-india.github.io/exhibition/exhibition.png" alt="Image 2">
+            <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
+                <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">WEST</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(17)">Mumbai<br><br>Mr.Vikram Khatarkar</div>
+                <div class="box" onclick="onClickViewQrCode(16)">Navi Mumbai<br><br>Mr.Piyush Panchal</div>
+                <div class="box" onclick="onClickViewQrCode(18)">Pune (Chakan DTC)<br><br>Mr.Gajanan Kurhe</div>
+                <div class="box" onclick="onClickViewQrCode(19)">Pune (City)<br><br>Mr.Swapnil Shinde</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(14)">Vadodara (POR DTC)<br><br>Mr.Subodh Ladwa</div>
+                <div class="box" onclick="onClickViewQrCode(15)">Vadodara (City)<br><br>Mr.Sayan Mukherjee</div>
+                <div class="box" onclick="onClickViewQrCode(12)">Ahmedabad<br><br>Mr.Viral Patel</div>
+                <div class="box" onclick="onClickViewQrCode(13)">Gandhinagar<br><br>Mr.Tejinder Singh</div>
+            </div>
+            <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
+                <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">NORTH</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(11)">Delhi<br><br>Mr.Brijmohan Bhandari</div>
+                <div class="box" onclick="onClickViewQrCode(20)">Tapukara (DTC)<br><br>Mr.Vipul Sharma</div>
+                <div class="box" onclick="onClickViewQrCode(10)">Gurugram<br><br>Mr.Vinod Kumar Meena</div>
+            </div>
+            <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
+                <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">SOUTH</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(5)">Chennai<br><br>Mr.Jithin Balakrishnan</div>
+                <div class="box" onclick="onClickViewQrCode(6)">Sriperumbudur<br><br>Mr.Karthik Ganesh</div>
+                <div class="box" onclick="onClickViewQrCode(9)">Coimbatore<br><br>Mr.R Shanmugha Prabhu</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(3)">Bengaluru (Peenya) <br><br>Mr.Prasad Gowda</div>
+                <div class="box" onclick="onClickViewQrCode(4)">Bengaluru (Electronic City)<br><br>Mr. Sandeep Kumar
+                </div>
+                <div class="box" onclick="onClickViewQrCode(7)">Hyderabad<br><br>Mr.Ajay Atluri</div>
+                <div class="box" onclick="onClickViewQrCode(8)">Secunderabad<br><br>Mr.A Vijay Anand</div>
+            </div>
+            <div class="box-container" style="background-color: #de0000;height:40px; width: 50%;">
+                <div style="color: #dfe2e3; font-size: 38px; align-items: center; justify-content: center;">EAST</div>
+            </div>
+            <div class="box-container">
+                <div class="box" onclick="onClickViewQrCode(1)">Raipur <br><br> Mr.Sutanu Sarkar</div>
+                <div class="box" onclick="onClickViewQrCode(2)">Kolkata <br><br>Mr.Sugata Nandi</div>
+            </div>
+        </div>
+        <!-- Add more slides here -->
+        <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="cityname" class="modalText">City Name: </p>
+            <p id="managername" class="modalText">Manager name: </p>
+            <p id="qrcodeimg" class="qrcode"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        // Function to show the previous slide
+        function prevSlide() {
+            showSlide(slideIndex -= 1);
+        }
+
+        // Function to show the next slide
+        function nextSlide() {
+            showSlide(slideIndex += 1);
+        }
+
+        // Function to show the current slide
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {
+                slideIndex = 1;
             }
-        ];
-
-        let location = locations?.find(location => location.id === cityCode);
-
-        const imageUrl = `qr/${location?.image}`;
-
-        document.getElementById('cityname').innerText = `${location?.city}`;
-        document.getElementById('managername').innerText = `${location?.name}`;
-        document.getElementById('qrcodeimg').innerHTML = `<img src="${imageUrl}" alt="QR Code" style="width: 80%;"/>`;
-
-        // Show the modal
-        document.getElementById('qrModal').style.display = 'block';
-    }
-
-    function closeModal() {
-        // Hide the modal
-        document.getElementById('qrModal').style.display = 'none';
-    }
-
-    // Close the modal when the user clicks anywhere outside of the modal
-    window.onclick = function (event) {
-        if (event.target == document.getElementById('qrModal')) {
-            closeModal();
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
         }
-    }
-    setInterval(() => {
-        // closeModal();
-    }, 3000);  // 3000 milliseconds = 3 seconds
-</script>
+
+        // Automatically change slide every 3 seconds
+        // setInterval(() => {
+        //     nextSlide();
+        //  }, 3000);  // 3000 milliseconds = 3 seconds
+
+
+        // JavaScript
+        function onClickViewQrCode(cityCode) {
+            let locations = [
+                {
+                    id: 1,
+                    city: "Raipur",
+                    name: "Mr. Sutanu Sarkar",
+                    image: "1.jpg"
+                },
+                {
+                    id: 2,
+                    city: "Kolkata",
+                    name: "Mr. Sugata Nandi",
+                    image: "2.jpg"
+                },
+                {
+                    id: 3,
+                    city: "Bengaluru (Peenya)",
+                    name: "Mr. Prasad Gowda",
+                    image: "3.jpg"
+                },
+                {
+                    id: 4,
+                    city: "Bengaluru (Electronic City)",
+                    name: "Mr. Sandeep Kumar",
+                    image: "4.jpg"
+                },
+                {
+                    id: 5,
+                    city: "Chennai",
+                    name: "Mr. Jithin Balakrishnan",
+                    image: "5.jpg"
+                },
+                {
+                    id: 6,
+                    city: "Sriperumbudur",
+                    name: "Mr. Karthik Ganesh",
+                    image: "6.jpg"
+                },
+                {
+                    id: 7,
+                    city: "Hyderabad",
+                    name: "Mr. Ajay Atluri",
+                    image: "7.jpg"
+                },
+                {
+                    id: 8,
+                    city: "Secunderabad",
+                    name: "Mr. A Vijay Anand",
+                    image: "8.jpg"
+                },
+                {
+                    id: 9,
+                    city: "Coimbatore",
+                    name: "Mr. R Shanmugha Prabhu",
+                    image: "9.jpg"
+                },
+                {
+                    id: 10,
+                    city: "Gurugram",
+                    name: "Mr. Vinod Kumar Meena",
+                    image: "10.png"
+                },
+                {
+                    id: 11,
+                    city: "Delhi",
+                    name: "Mr. Brijmohan Bhandari",
+                    image: "11.png"
+                },
+                {
+                    id: 12,
+                    city: "Ahmedabad",
+                    name: "Mr. Viral Patel",
+                    image: "12.png"
+                },
+                {
+                    id: 13,
+                    city: "Gandhinagar",
+                    name: "Mr. Tejinder Singh",
+                    image: "13.png"
+                },
+                {
+                    id: 14,
+                    city: "Vadodara (POR DTC)",
+                    name: "Mr. Subodh Ladwa",
+                    image: "14.png"
+                },
+                {
+                    id: 15,
+                    city: "Vadodara (City)",
+                    name: "Mr. Sayan Mukherjee",
+                    image: "15.jpg"
+                },
+                {
+                    id: 16,
+                    city: "Navi Mumbai",
+                    name: "Mr. Piyush Panchal",
+                    image: "16.png"
+                },
+                {
+                    id: 17,
+                    city: "Mumbai",
+                    name: "Mr. Vikram Khatarkar",
+                    image: "17.png"
+                },
+                {
+                    id: 18,
+                    city: "Pune (Chakan DTC)",
+                    name: "Mr. Gajanan Kurhe",
+                    image: "18.png"
+                },
+                {
+                    id: 19,
+                    city: "Pune (City)",
+                    name: "Mr. Swapnil Shinde",
+                    image: "19.png"
+                },
+                {
+                    id: 20,
+                    city: "Tapukara (DTC)",
+                    name: "Mr. Vipul Sharma",
+                    image: "20.png"
+                }
+            ];
+
+            let location = locations?.find(location => location.id === cityCode);
+
+            const imageUrl = `qr/${location?.image}`;
+
+            document.getElementById('cityname').innerText = `${location?.city}`;
+            document.getElementById('managername').innerText = `${location?.name}`;
+            document.getElementById('qrcodeimg').innerHTML = `<img src="${imageUrl}" alt="QR Code" style="width: 80%;"/>`;
+
+            // Show the modal
+            document.getElementById('qrModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            // Hide the modal
+            document.getElementById('qrModal').style.display = 'none';
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('qrModal')) {
+                closeModal();
+            }
+        }
+        setInterval(() => {
+            // closeModal();
+        }, 3000);  // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+
+</html>
